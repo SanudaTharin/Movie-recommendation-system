@@ -1,0 +1,255 @@
+/* Global background wallpaper */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../public/movie theater.jpg'); /* Path relative to public folder */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* App styles */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Main container with semi-transparent background */
+.app-container {
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  max-width: 1300px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* Input and Button */
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.movie-input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+}
+
+.submit-button:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+}
+
+
+.loading {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Cards container */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  margin-top: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #888 transparent; /* Firefox */
+}
+
+/* Optional: nice scroll for Chrome */
+.card-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+/* Individual movie card */
+.movie-card {
+  background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+  border-radius: 10px;
+  width: 260px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  color: #fff;
+  backdrop-filter: blur(10px); /* Adds a glass effect */
+  border: 10px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.poster {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+}
+
+.movie-info p, .movie-info h3 {
+  color: #fff;
+}
+
+.movie-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.movie-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.featured-card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto 20px;
+  max-width: 900px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  color: white;
+  backdrop-filter: blur(12px);
+}
+
+.featured-card .poster {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.featured-card .movie-info {
+  text-align: left;
+}
+
+/* === Small Cards for Recommended Movies === */
+.small-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.small-card {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 160px;
+  max-width: 160px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.3s;
+  backdrop-filter: blur(8px);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.small-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.small-card p {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+  word-break: break-word;
+  color: #fff;
+}
+
+
+.small-card:hover {
+  transform: scale(1.05);
+  border-color: #ffffff66;
+}
+
+.small-card.active {
+  border-color: #61dafb;
+}
